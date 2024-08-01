@@ -40,9 +40,9 @@ def predict_sentiment(text_input):
 @app.route('/predict', methods=['POST'])
 def predict():
   data = request.json
-  text = data['text']
+  text_input = data['text']
 
-  predicted_sentiment = predict_sentiment(text)
+  predicted_sentiment = predict_sentiment(text_input)
   response = {
         'predicted_sentiment': predicted_sentiment
     }
